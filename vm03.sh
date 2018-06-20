@@ -11,6 +11,6 @@ cd $SLURM_SUBMIT_DIR
 
 for chr in {1..22}
 do
-    plink --bfile  FIGI_merged_filtered-updated-chr$chr --recode vcf --out FIGI_merged_filtered-updated-chr$chr
-    vcf-sort FIGI_merged_filtered-updated-chr$chr.vcf | bgzip -c > FIGI_merged_filtered-updated-chr$chr.vcf.gz     
+    plink --bfile  FIGI_tmp-updated-chr$chr --recode vcf --out FIGI-updated-chr$chr
+    vcf-sort FIGI-updated-chr$chr.vcf | bgzip -c > FIGI-updated-chr$chr.vcf.gz     
 done
